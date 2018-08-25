@@ -6,30 +6,27 @@ import javax.persistence.*;
 @Table(name = "book")
 public class Book {
 
- @Id
- @GeneratedValue(strategy = GenerationType.AUTO)
- @Column(name = "isbn")
- private Integer isbn ;
- @Column(name = "description")
- private String description;
- @Column(name = "name")
- private String name ;
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Integer id;
+    private String description;
+    private String name;
 
     public Book() {
     }
 
-    public Book(Integer isbn, String description, String name) {
-        this.isbn = isbn;
+    public Book(Integer id, String description, String name) {
+        this.id = id;
         this.description = description;
         this.name = name;
     }
 
-    public Integer getIsbn() {
-        return isbn;
+    public Integer getId() {
+        return id;
     }
 
-    public void setIsbn(Integer isbn) {
-        this.isbn = isbn;
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public String getDescription() {
@@ -51,7 +48,7 @@ public class Book {
     @Override
     public String toString() {
         return "Book{" +
-                "isbn='" + isbn + '\'' +
+                "id='" + id + '\'' +
                 ", description='" + description + '\'' +
                 ", name='" + name + '\'' +
                 '}';
